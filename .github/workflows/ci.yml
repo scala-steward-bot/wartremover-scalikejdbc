@@ -16,10 +16,10 @@ jobs:
         java-version: "adopt@1.8"
     - uses: coursier/cache-action@v5
     - run: sbt "onFailure +test:compile" "+test:compile"
-    - sbt
-      "scalafmtCheck"
-      "scalafmtCheckAll"
-      "+test"
-      "+core/publishLocal"
-      "++2.12.12"
-      "tests/scripted"
+    - run: sbt
+           "scalafmtCheck"
+           "scalafmtCheckAll"
+           "+test"
+           "+core/publishLocal"
+           "++2.12.12"
+           "tests/scripted"
